@@ -1,0 +1,417 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-image: url(bg.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@font-face {
+    font-family: 'StretchPro'; 
+    src: url('StretchPro.otf') format('opentype'); 
+}
+#video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content {
+    width: 820px;
+    margin: 700px 540px 0px 560px;
+}
+.second-content {
+    display: block;
+    margin-left: 80px;
+    min-width: 1000px;
+    margin-right: 80px;
+}
+.contact-content {
+  display: flex;
+    justify-content: center; 
+    align-items: center; 
+    font-size: 30px;
+    gap: 100px;
+}
+
+
+
+
+
+
+
+h1 {
+    font-family: "Sequel 100 Wide 95"; 
+    letter-spacing: 0.1em;   
+}
+h4 {
+    font-family: 'StretchPro';
+    letter-spacing: 0.1em;
+}
+
+p {
+    font-family: 'StretchPro';
+    letter-spacing: 0.1em;
+} 
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px); 
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.input {
+    position: absolute;
+}
+
+.scene {
+    width: 300px;
+    height: 400px;
+    max-width: 100%;
+    margin: auto;
+    perspective: 1000px; /* Thêm để tạo hiệu ứng 3D tốt hơn */
+}
+
+.card-wrap {
+    display: inline-block;
+    width: 300px;
+    max-width: 100%;
+    height: 400px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.card, .front, .back, .card-photo {
+    width: 100%;
+    height: 100%;
+}
+
+.card-face {
+    position: absolute;
+    backface-visibility: hidden;
+    
+}
+
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s, box-shadow .4s;
+    box-shadow: 0 1px 2px 0 white, 0 1px 3px 1px white;
+    border-radius: 10px;
+}
+
+.card-photo {
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 1px 3px 0 white, 0 4px 8px 3px white;
+}
+
+.back {
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+.back img {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.flipcard {
+    opacity: 0; 
+}
+
+input:checked + .card {
+    transform: rotateY(180deg);
+}
+
+@media screen and (min-width: 960px) {
+    .scene {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+.glow {
+    color: white;
+    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 
+                 0 0 20px black, 0 0 25px black, 0 0 30px black;
+    animation: glow-animation 1.5s infinite alternate;
+}
+
+@keyframes glow-animation {
+    0% {
+        text-shadow: 0 0 5px black, 0 0 10px orange, 0 0 15px black;
+    }
+    100% {
+        text-shadow: 0 0 15px black, 0 0 25px black, 0 0 40px black;
+    }
+}
+/* Skills */
+.wrap p {
+  position: absolute;
+  font: .8em sans-serif bold;
+  top: 50%;
+  left: 20px;
+  margin: 0 auto;
+  color: #000;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  letter-spacing: 1px;
+}
+
+.wrap {
+  position: relative;
+  width: 840px;
+  height: 30px;
+  margin: 25px auto;
+  padding: 0;
+  background: #444;
+  border-radius: 5px;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -o-transition: .5s ease;
+  transition: .5s .15s ease;
+}
+
+.bar {
+  height: 30px;
+  border-radius: 5px;
+  transition: .25s ease;
+}
+
+.wrap:hover .bar {
+  background: rgba(255,255,255, 1);
+  cursor: pointer;
+}
+
+.wrap:hover {
+  width: 900px;
+  background: #555;
+}
+
+.html {
+  width: 90%;
+  background: orange;
+  -webkit-animation: html 2.5s;
+  -moz-animation: html 2.5s;
+  -o-animation: html 2.5s;
+  animation: html 2.5s;
+}
+
+.css {
+  width: 85%;
+  background: orange;
+  -webkit-animation: css 2s;
+  -moz-animation: css 2s;
+  -o-animation: css 2s;
+  animation: css 2s;
+}
+
+.jquery {
+  width: 55%;
+  background: orange;
+  -webkit-animation: jquery 2.1s;
+  -moz-animation: jquery 2.1s;
+  -o-animation: jquery 2.1s;
+  animation: jquery 2.1s;
+  
+}
+
+.js{
+  width: 40%;
+  background: orange;
+  -webkit-animation: js 1.8s;
+  -moz-animation: js 1.8s;
+  -o-animation: js 1.8s;
+  animation: js 1.8s;
+}
+
+.php{
+  width: 63%;
+  background: orange;
+  -webkit-animation: php 2.9s;
+  -moz-animation: php 2.9s;
+  -o-animation: php 2.9s;
+  animation: php 2.9s;
+}
+
+.wrap span {
+  display: block;
+  float: right;
+  padding-right: 15px;
+  color: #222;
+  line-height: 30px;
+  -webkit-animation: span 2s 1.7s forwards;
+  -moz-animation: span 2s 1.7s forwards;
+  -o-animation: span 2s 1.7s forwards;
+  animation: span 2s 1.7s forwards;
+  opacity: 0;
+}
+
+.desc {
+  display: none;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 600px;
+  background: #333;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.desc p {
+  color: white;
+  margin: 0 auto;
+}
+
+/* Keyframes
+-------------------- */
+
+
+/* html
+--------- */
+@-webkit-keyframes html {
+  from { width:  0%; }
+  to   { width: 90%; }
+}
+@-moz-keyframes html {
+  from { width:  0%; }
+  to   { width: 90%; }
+}
+@-o-keyframes html {
+  from { width:  0%; } 
+  to { width:   90%; }
+}
+@keyframes html {
+  from { width:  0%; } 
+  to { width:   90%; }
+}
+
+/* css
+--------- */
+@-webkit-keyframes css {
+  from { width:  0%; }
+  to   { width: 85%; }
+}
+@-moz-keyframes css {
+  from { width:  0%; }
+  to   { width: 85%; }
+}
+@-o-keyframes css {
+  from { width:  0%; }
+  to   { width: 85%; }
+}
+@keyframes css {
+  from { width:  0%; }
+  to   { width: 85%; }
+}
+
+/* jquery
+--------- */
+@-webkit-keyframes jquery {
+  from { width:  0%; }
+  to   { width: 55%; }
+}
+@-moz-keyframes jquery {
+  from { width:  0%; }
+  to   { width: 55%; }
+}
+@-o-keyframes jquery {
+  from { width:  0%; }
+  to   { width: 55%; }
+}
+@keyframes jquery {
+  from { width:  0%; }
+  to   { width: 55%; }
+}
+
+/* js
+--------- */
+@-webkit-keyframes js {
+  from { width:  0%; }
+  to   { width: 40%; }
+}
+@-moz-keyframes js {
+  from { width:  0%; }
+  to   { width: 40%; }
+}
+@-o-keyframes js {
+  from { width:  0%; }
+  to   { width: 40%; }
+}
+@keyframes js {
+  from { width:  0%; }
+  to   { width: 40%; }
+}
+
+/* php
+--------- */
+@-webkit-keyframes php{
+  from { width:  0%; }
+  to   { width: 63%; }
+}
+@-moz-keyframes php{
+  from { width:  0%; }
+  to   { width: 63%; }
+}
+@-o-keyframes php{
+  from { width:  0%; }
+  to   { width: 63%; }
+}
+@keyframes php{
+  from { width:  0%; }
+  to   { width: 63%; }
+}
+
+
+@-webkit-keyframes span {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-moz-keyframes span {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-o-keyframes span {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes span {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
